@@ -3,13 +3,14 @@
   margin: 0;
   font-family: "Tilt Neon", sans-serif;
   user-select: none;
+  color: var(--primary-text-color);
 }
 nav.navbar {
   height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px 36px;
   margin-top: 13px;
 }
 
@@ -18,49 +19,48 @@ nav.navbar {
 }
 section.board-section {
   display: flex;
-  gap: 10px;
-  width: 90%;
+  gap: 1rem;
+  width: 78vw;
   margin: auto;
   margin-top: 20px;
   align-items: baseline;
 }
 
 .board-container {
-  border: 1px solid #ddd;
+  border: 1px solid var(--card-border-color);
   flex: 1;
-  background: #fff;
+  background: var(--primary-color);
   border-radius: 9px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: var(--card-box-shadow);
 }
-
 body {
-  background: #f0f0f0;
+  background: var(--bg);
+  transition: 0.3s;
 }
 
 .board-title {
   font-weight: bold;
   font-size: 16pt;
-  padding: 10px;
+  padding: 10px 0px 0px 10px;
 }
 
 .board-item {
-  margin: 5px;
-  background: #dedede;
+  margin: 0px 5px;
+  background: var(--board-item-bg);
   padding: 11px 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.15s;
 }
 .board-item:hover {
-  background: #c4c4c4;
+  background: var(--board-item-hover-bg);
 }
 .add-task {
-  margin: 5px;
-  background: #c5a4ff;
+  margin: 10px 5px;
+  background: var(--add-task-bar-bg);
   border-radius: 8px;
   cursor: pointer;
-  color: #3e0048;
+  color: var(--add-task-bar-txt);
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@ i.ic-add-task {
   display: none;
 }
 .add_task_display {
-  background: #c5a4ff;
+  background: var(--add-task-bar-bg);
   border-radius: 5px;
   cursor: pointer;
   transition: 0.15s;
@@ -83,7 +83,7 @@ i.ic-add-task {
   justify-content: flex-end;
   align-items: center;
   gap: 8px;
-  color: #3e0048;
+  color: var(--add-task-bar-txt);
   flex-direction: row-reverse;
 }
 input#task_entry {
@@ -129,4 +129,58 @@ menu#context_del:hover {
 }
 i.trashcan {
   font-size: 10pt;
+}
+.drop-task-here {
+  /* background: red; */
+  height: 8rem;
+  width: 86%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--drop-task-here-txt);
+  border: 2px dashed var(--card-border-color);
+  margin-bottom: 2rem;
+  display: none;
+}
+div#dummy_slot {
+  height: 10px;
+}
+.dragging {
+  display: none;
+}
+.dragged_slot {
+  margin: 5px;
+  background: #dedede;
+  padding: 11px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.15s;
+  height: 20px !important;
+}
+div#boardDoing {
+  padding-bottom: 10px;
+}
+div#boardFinished {
+  padding-bottom: 10px;
+}
+.board-body {
+  max-height: calc(100vh - 18rem);
+  overflow: auto;
+}
+.theme-toggle-btn {
+  background: transparent;
+  display: block;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.15s;
+}
+.theme-toggle-btn:hover {
+  background: var(--board-item-hover-bg);
 }

@@ -1,0 +1,27 @@
+.light-theme {
+  --primary-text-color: #000;
+  --bg: #f0f0f0;
+  --primary-color: #fff;
+  --card-border-color: #ddd;
+  --card-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --board-item-bg: #dedede;
+  --board-item-hover-bg: #c4c4c4;
+  --drop-task-here-txt: #686868;
+  --add-task-bar-bg: #c5a4ff;
+  --add-task-bar-txt: #3e0048;
+}
+
+.dark-theme {
+  --primary-text-color: #d9d9d9;
+  --bg: #1b1c1f;
+  --primary-color: #111113;
+  --card-border-color: #17171b;
+  --card-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --board-item-bg: #1b1c1f;
+  --board-item-hover-bg: #292a2f;
+  --drop-task-here-txt: #686868;
+  --add-task-bar-bg: #2c007b;
+  --add-task-bar-txt: #df23ff;
+}

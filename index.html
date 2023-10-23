@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>drello by dev5h</title>
-
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/theme.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="light-theme">
     <nav class="navbar">
       <div class="logo">drello</div>
       <menu class="title-menu">
@@ -42,8 +42,27 @@
       <div class="board-container">
         <div class="board-title">Task List</div>
         <div id="boardTask" class="board-body">
-          <!-- <div class="board-item">Item-1</div>
-          <div class="board-item">Item-2</div> -->
+          <div id="task-drop" class="drop-task-here">
+            <i class="ic-drop-task">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-plus-square"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </i>
+            <span>Drop Task Here</span>
+          </div>
         </div>
         <div class="add-task">
           <form action="" id="task_entry_form">
@@ -80,12 +99,56 @@
       <!-- DOing -->
       <div class="board-container">
         <div class="board-title">Doing</div>
-        <div class="board-body"></div>
+        <div class="board-body" id="boardDoing">
+          <div id="doing-drop" class="drop-task-here">
+            <i class="ic-drop-task">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-plus-square"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </i>
+            <span>Drop Task Here</span>
+          </div>
+        </div>
       </div>
       <!-- Done -->
       <div class="board-container">
         <div class="board-title">Finished</div>
-        <div class="board-body"></div>
+        <div class="board-body" id="boardFinished">
+          <div id="finished-drop" class="drop-task-here">
+            <i class="ic-drop-task">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-plus-square"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </i>
+            <span>Drop Task Here</span>
+          </div>
+        </div>
       </div>
     </section>
     <div class="context-menu">

@@ -1,3 +1,5 @@
+import { list_taskUI } from "./board";
+
 const localstorage_param = "tasks";
 
 export function getTasks() {
@@ -24,4 +26,24 @@ export function addTask(task) {
   } else {
     localStorage.setItem(localstorage_param, JSON.stringify([task_obj]));
   }
+}
+
+export function updateTaskStatus(taskId, status) {
+  let tasks = getTasks();
+  let obj = tasks.find((task) => task.task_id == taskId);
+  obj.status = status;
+  localStorage.setItem(localstorage_param, JSON.stringify(tasks));
+  list_taskUI();
+}
+export function getTask(id) {
+  return getTasks().find((task) => task.task_id == id);
+}
+export function getTaskIndex(id) {
+  return getTasks().findIndex((task) => task.task_id == id);
+}
+
+export function removeTask(taskId) {
+  let filteredTasks = getTasks().filter((task) => task.task_id != taskId);
+  localStorage.setItem(localstorage_param, JSON.stringify(filteredTasks));
+  list_taskUI();
 }
