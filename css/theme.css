@@ -10,6 +10,7 @@
   --drop-task-here-txt: #686868;
   --add-task-bar-bg: #c5a4ff;
   --add-task-bar-txt: #3e0048;
+  --task-entry-txt: #3e0048;
 }
 
 .dark-theme {
@@ -22,6 +23,7 @@
   --board-item-bg: #1b1c1f;
   --board-item-hover-bg: #292a2f;
   --drop-task-here-txt: #686868;
-  --add-task-bar-bg: #2c007b;
+  --add-task-bar-bg: #9c27b04a;
   --add-task-bar-txt: #df23ff;
+  --task-entry-txt: #f5b1ff;
 }

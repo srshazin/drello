@@ -75,7 +75,7 @@ i.ic-add-task {
   display: none;
 }
 .add_task_display {
-  background: var(--add-task-bar-bg);
+  /* background: var(--add-task-bar-bg); */
   border-radius: 5px;
   cursor: pointer;
   transition: 0.15s;
@@ -93,7 +93,7 @@ input#task_entry {
   font-size: 12pt;
   width: 100%;
   caret-color: #9c27b0;
-  color: #3e0048;
+  color: var(--task-entry-txt);
 }
 
 input#task_entry:focus {
@@ -152,7 +152,7 @@ div#dummy_slot {
 }
 .dragged_slot {
   margin: 5px;
-  background: #dedede;
+  background: var(--board-item-bg);
   padding: 11px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -183,4 +183,30 @@ div#boardFinished {
 }
 .theme-toggle-btn:hover {
   background: var(--board-item-hover-bg);
+}
+@media only screen and (max-width: 768px) {
+  section.board-section {
+    width: 97vw;
+    gap: 1px;
+  }
+}
+
+.board-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.board-body::-webkit-scrollbar-thumb {
+  background: var(--board-item-hover-bg);
+  border-radius: 1px;
+}
+
+/* Style the scrollbar track on hover */
+.board-body::-webkit-scrollbar-track:hover {
+  background: #aaa; /* Change the background color on hover */
+}
+
+/* Style the scrollbar thumb on hover */
+.board-body::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change the thumb color on hover */
 }

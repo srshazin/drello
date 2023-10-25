@@ -1,7 +1,8 @@
 import { handleAddTask, list_taskUI } from "./src/board";
 import { themeToggleBtn } from "./src/elements";
 import { setupUiTheme } from "./src/theme";
-
+import "./css/theme.css";
+import "./css/style.css";
 list_taskUI();
 handleAddTask();
 
