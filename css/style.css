@@ -210,3 +210,15 @@ div#boardFinished {
 .board-body::-webkit-scrollbar-thumb:hover {
   background: #555; /* Change the thumb color on hover */
 }
+footer.footer {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a.footer-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #9c27b0;
+}
