@@ -1,11 +1,12 @@
+import "./css/style.css";
+import "./css/theme.css";
 import { handleAddTask, list_taskUI } from "./src/board";
 import { themeToggleBtn } from "./src/elements";
+import { echoTest } from "./src/home";
 import { setupUiTheme } from "./src/theme";
-import "./css/theme.css";
-import "./css/style.css";
+echoTest();
 list_taskUI();
 handleAddTask();
-
 setupUiTheme();
 
 function setThemeDark() {
@@ -53,7 +54,6 @@ if (localStorage.getItem("theme")) {
   document.body.className = "light-theme";
 }
 themeToggleBtn.addEventListener("click", function (e) {
-  console.log("Fuck");
   if (localStorage.getItem("theme") == "dark") {
     setThemeLight();
   } else {

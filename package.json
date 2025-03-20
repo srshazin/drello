@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.4.5"
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
   },
   "dependencies": {
     "feather-icons": "^4.29.1"

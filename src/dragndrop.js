@@ -90,7 +90,7 @@ export function handleDrag(e, task) {
     ev.preventDefault();
     if (taskCount.doing == 0) {
       boardDoing.children[0].style.color = "#000";
-      boardDoing.children[0].style.borderColor = "#000";
+      boardDoing.children[0].style.borderColor = "#808080";
     }
   });
   // Dragover on finished board
@@ -98,7 +98,7 @@ export function handleDrag(e, task) {
     ev.preventDefault();
     if (taskCount.finished == 0) {
       boardFinished.children[0].style.color = "#000";
-      boardFinished.children[0].style.borderColor = "#000";
+      boardFinished.children[0].style.borderColor = "#808080";
     }
   });
   // Dragleave on finished board
