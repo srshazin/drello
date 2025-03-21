@@ -1,2 +1,2 @@
 # Drello
-A simple minimal trello clone made in vanilla JavaScript
+A minimal **Kanban** board made using Javascript and Typescript
