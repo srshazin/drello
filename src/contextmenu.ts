@@ -1,7 +1,7 @@
 import { contextMenu, context_del } from "./elements";
 import { removeTask } from "./localstorage";
 export var isContextMenuOpen = false;
-export function handleContextMenu(e) {
+export function handleContextMenu(e: any) {
   e.preventDefault();
   const clientOffset = {
     x: e.clientX,

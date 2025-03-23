@@ -18,12 +18,12 @@ nav.navbar {
   font-size: 27pt;
 }
 section.board-section {
-  display: flex;
   gap: 1rem;
   width: 78vw;
   margin: auto;
   margin-top: 20px;
   align-items: baseline;
+  display: none;
 }
 
 .board-container {
@@ -221,4 +221,101 @@ a.footer-link {
   font-weight: bold;
   text-decoration: none;
   color: #9c27b0;
+}
+section#initialScreen {
+  display: flex;
+  justify-content: space-between;
+  width: 78vw;
+  margin: auto;
+  margin-top: 20px;
+  gap: 1rem;
+  height: 77vh;
+}
+
+.board-list-item {
+  background: var(--primary-color);
+  margin-bottom: 0.6rem;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+}
+
+.is-board-list {
+  flex: 1;
+}
+
+.is-create {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+
+.flex-between-center-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-start-middle {
+  display: flex;
+  justify-content: start;
+  gap: 7px;
+}
+
+.bli-meta-item {
+  font-size: 11pt;
+  opacity: 0.7;
+}
+
+.bli-title {
+  font-size: 16pt;
+}
+
+.is-create-form h3 {
+  font-size: 20pt;
+  margin-bottom: 0.5rem;
+}
+
+input.is-create-field {
+  display: block;
+  background: no-repeat;
+  border: none;
+  font-size: 20pt;
+  width: 100%;
+  border-bottom: 1px solid #ffffff33;
+  padding: 0.3rem 0rem;
+  margin-bottom: 1rem;
+  transition: 0.15s;
+}
+
+.is-create-form {
+  width: 80%;
+}
+
+button.btn-primary {
+  background: #673ab7;
+  border: none;
+  padding: 8px 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.13s;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+button.btn-lg {
+  padding: 0.7rem 2rem;
+  font-size: 14pt;
+}
+
+input.is-create-field:focus {
+  border-bottom-color: #7a00bb;
+}
+
+button.btn-primary:hover {
+  background: #7a43db;
 }

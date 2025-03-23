@@ -1,13 +1,14 @@
-import "./css/style.css";
 import "./css/theme.css";
-import { handleAddTask, list_taskUI } from "./src/board";
-import { themeToggleBtn } from "./src/elements";
-import { echoTest } from "./src/home";
+import { handleAddTask } from "./src/board";
+import { handleCreateBoard } from "./src/boards";
+import { addBoardBtn, themeToggleBtn } from "./src/elements";
 import { setupUiTheme } from "./src/theme";
-echoTest();
-list_taskUI();
+
 handleAddTask();
 setupUiTheme();
+
+// register events
+addBoardBtn.addEventListener("click", handleCreateBoard);
 
 function setThemeDark() {
   document.body.className = "dark-theme";

@@ -1,13 +1,9 @@
-import { list_taskUI, taskCount } from "./board";
+import { listTaskUI, taskCount } from "./board";
 import { boardDoing, boardFinished, boardTask, task_slots } from "./elements";
-import {
-  getTask,
-  getTaskIndex,
-  getTasks,
-  updateTaskStatus,
-} from "./localstorage";
-var selected, draggedElement;
-export function handleDrag(e, task) {
+import { updateTaskStatus } from "./localstorage";
+import { currentBoard } from "./states";
+var selected: any, draggedElement;
+export function handleDrag(e: any, task: any) {
   selected = e.target;
   e.dataTransfer.setData("text/plain", e.target.innerText);
 
@@ -17,13 +13,13 @@ export function handleDrag(e, task) {
   //   selected.classList.add("dragging");
   // Doing box
   if (taskCount.pending == 0) {
-    document.getElementById("task-drop").style.display = "flex";
+    document.getElementById("task-drop")!.style.display = "flex";
   }
   if (taskCount.doing == 0) {
-    document.getElementById("doing-drop").style.display = "flex";
+    document.getElementById("doing-drop")!.style.display = "flex";
   }
   if (taskCount.finished == 0) {
-    document.getElementById("finished-drop").style.display = "flex";
+    document.getElementById("finished-drop")!.style.display = "flex";
   }
 
   // Drop on task board
@@ -33,7 +29,7 @@ export function handleDrag(e, task) {
     if (taskCount.pending == 0) {
       console.log("Shifted bitch");
       boardTask.innerHTML = "";
-      updateTaskStatus(selected.getAttribute("data-id"), 0);
+      updateTaskStatus(selected.getAttribute("data-id"), 0, listTaskUI);
       selected = null;
     }
   });
@@ -65,13 +61,13 @@ export function handleDrag(e, task) {
       // nothing
     }
     if (taskCount.doing == 0) {
-      document.getElementById("doing-drop").style.display = "none";
+      document.getElementById("doing-drop")!.style.display = "none";
     }
     if (taskCount.finished == 0) {
-      document.getElementById("finished-drop").style.display = "none";
+      document.getElementById("finished-drop")!.style.display = "none";
     }
     // remove any open slot
-    task_slots.forEach((task) => {
+    task_slots.forEach((task: any) => {
       task.classList.remove("dragged_slot");
     });
   });
@@ -142,13 +138,21 @@ export function handleDrag(e, task) {
       ev.stopImmediatePropagation();
       var selectedNodeId = selected.getAttribute("data-id");
       var droppedNodeId = parseInt(ev.target.getAttribute("data-child"));
-      const tasks = getTasks();
-      tasks.splice(getTaskIndex(selectedNodeId), 1);
+      const tasks = currentBoard?.tasks;
+      if (tasks == null) throw new Error("Task is null");
+
+      tasks.splice(
+        tasks.findIndex((t) => (t.task_id = parseInt(selectedNodeId)), 1)
+      );
       const dropIndex = tasks.findIndex(
         (task) => task.task_id == droppedNodeId
       );
       // Check if they belong to different board
-      let replacedTask = getTask(selectedNodeId);
+      let replacedTask = tasks.find(
+        (t) => t.task_id == parseInt(selectedNodeId)
+      );
+      if (!replacedTask) throw new Error("Invalid task");
+
       let parentNode = ev.target.parentNode;
       console.log(parentNode);
       if (parentNode == boardTask) {
@@ -162,7 +166,7 @@ export function handleDrag(e, task) {
 
       console.log(tasks);
       localStorage.setItem("tasks", JSON.stringify(tasks));
-      list_taskUI();
+      listTaskUI();
 
       // ev.target.classList.add("dragged_slot");
     });
